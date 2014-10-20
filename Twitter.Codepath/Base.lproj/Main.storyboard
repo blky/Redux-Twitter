@@ -26,7 +26,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nJz-wC-jPh"/>
-                                    <segue destination="NGS-xh-b5j" kind="push" identifier="toLogin" id="L2m-Ok-Eof"/>
+                                    <segue destination="NGS-xh-b5j" kind="show" identifier="toLogin" id="V1v-U1-Qxu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -156,9 +156,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AAl-rT-Ab9">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="7lS-tY-Apv">
+                        <barButtonItem key="leftBarButtonItem" title="SideMenu" id="7lS-tY-Apv">
                             <connections>
-                                <action selector="onLogout:" destination="D1M-tp-wl2" id="9vT-uw-ae7"/>
+                                <action selector="revealMenu:" destination="D1M-tp-wl2" id="PAA-dK-NfX"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New" id="nqZ-Jn-LAX">
@@ -173,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCw-QP-TqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19912" y="-12666"/>
+            <point key="canvasLocation" x="-19854" y="-12652"/>
         </scene>
         <!--Timeline Navigation Controller-->
         <scene sceneID="Jgx-iZ-OXH">
@@ -551,6 +551,18 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oauth_application" translatesAutoresizingMaskIntoConstraints="NO" id="Gp8-gR-518">
                                         <rect key="frame" x="77" y="65" width="91" height="84"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6l-gW-LPq">
+                                        <rect key="frame" x="8" y="277" width="158" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goTimeline:" destination="NGS-xh-b5j" eventType="touchUpInside" id="ewH-dD-nce"/>
+                                            <action selector="menuMentions:" destination="NGS-xh-b5j" eventType="touchUpInside" id="KVi-vC-lOS"/>
+                                            <action selector="onLogout:" destination="NGS-xh-b5j" eventType="touchUpInside" id="Oo3-Jn-MFs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
@@ -569,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GA7-Ce-aLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20618" y="-12465"/>
+            <point key="canvasLocation" x="-20574" y="-12743"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="0RL-cm-0jr">
@@ -765,6 +777,6 @@
         <image name="retweet.png" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="L2B-4O-Mhj"/>
+        <segue reference="pdM-ET-Tl4"/>
     </inferredMetricsTieBreakers>
 </document>

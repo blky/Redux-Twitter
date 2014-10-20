@@ -1,14 +1,31 @@
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol TimeLineVCDelegate {
+    
+    func willRevealMenu ()
+}
+
+class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UIBarPositioningDelegate {
     var tweets:[Tweet]?
     var timeLine:Int?;
     var params = ["count":20 ]
+    
+    var delegate:TimeLineVCDelegate?
+
       //0: home timeline , 1: mentions
     @IBOutlet weak var tableView: UITableView!
-    @IBAction func onLogout(sender: UIBarButtonItem) {
-        User.currentUser?.logout()
+    @IBAction func revealMenu(sender: UIBarButtonItem) {
+//        User.currentUser?.logout()
+         delegate?.willRevealMenu()
+      }
+    
+  
+    
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition{
+         return UIBarPosition.TopAttached
     }
+
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        // println ("count is \(self.tweets?.count ?? 0)")
         return self.tweets?.count ?? 0
